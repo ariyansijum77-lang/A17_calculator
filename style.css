@@ -1,8 +1,16 @@
-.calculator {
-    width: 300px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 2px solid #333;
-    border-radius: 10px;
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* ৪টি কলাম */
+    gap: 10px;
+    margin-top: 10px;
 }
-#display { width: 100%; height: 40px; margin-bottom: 10px; }
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.btn-clear { background-color: #ff4d4d; color: white; }
+.btn-equal { background-color: #4caf50; color: white; grid-column: span 1; }
+
