@@ -5,15 +5,7 @@ let currentOperator = null;
 let shouldResetDisplay = false;
 
 function updateDisplay() {
-    if (currentInput.length > 9) {
-        displayElement.style.fontSize = '40px';
-    } else if (currentInput.length > 6) {
-        displayElement.style.fontSize = '60px';
-    } else {
-        displayElement.style.fontSize = '80px';
-    }
-    
-    displayElement.innerText = Number(currentInput).toLocaleString('en-US');
+    displayElement.innerText = currentInput;
 }
 
 function appendNumber(number) {
@@ -71,7 +63,7 @@ function calculate() {
             break;
         case '/':
             if (current === 0) {
-                alert("Error: Division by zero");
+                alert("Error");
                 clearDisplay();
                 return;
             }
@@ -81,10 +73,11 @@ function calculate() {
             return;
     }
 
-    currentInput = parseFloat(computation.toPrecision(12)).toString();
+    currentInput = computation.toString();
     currentOperator = null;
     previousInput = null;
     shouldResetDisplay = true;
     updateDisplay();
 }
+
 
